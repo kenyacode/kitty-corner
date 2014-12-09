@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Cat Corner</title>
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script src="js/angular.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/KittiesController.js"></script>
+	</head>
+
+	<body ng-app="kittiesApp">
+
+	<div id="container" ng-controller="KittiesController as kitties">
+						
+			<section class="left-container">
+				<h1>Kittens for Adoption</h1>
+				<section class="dashed" ng-repeat="meow in kitties.kittiesList | filter: false">
+					<h3>My name is {{ meow.catName }}</h3>
+					<p>I am {{ meow.monthsOld }} months old.</p>
+					<p>I am a {{ meow.gender }}.</p>
+					<img ng-src="{{ meow.image }}"><br>
+					<label>Adopt?</label>
+					
+					<input type="checkbox" ng-model="meow.adopted" ng-class="meow.adopted ? 'right-container' : 'left-container'">
+				</section>
+			</section>
+
+			<section class="right-container">
+				<h1>Adopted Kittens</h1>
+				<section class="dashed" ng-repeat="meow in kitties.kittiesList | filter: true">
+					<h3>My name is {{ meow.catName }}</h3>
+					<p>I am {{ meow.monthsOld }} months old.</p>
+					<p>I am a {{ meow.gender }}.</p>
+					<img ng-src="{{ meow.image }}"><br>
+					<label>Adopt?</label>
+
+					<input type="checkbox" ng-model="meow.adopted" ng-class="meow.adopted ? 'right-container' : 'left-container'">
+				</section>
+			</section>
+
+	</div>
+	
+	</body>
+</html>

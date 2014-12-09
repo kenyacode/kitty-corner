@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body {
+	background-image: url('../images/background.png');
+	width: 100%;
+	font-family: 'Lobster';
+}
+
+#container {
+	width: 90% auto;
+	margin: 15px auto;
+	text-align: center;
+	border-radius: 25px;
+
+}
+
+.dashed {
+	border: dashed;
+	border-color: blue;
+	border-width: 1px;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 25px;
+
+}
+
+.left-container, .right-container {
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+	border-radius: 25px;
+	
+}
+
+h1 {
+   
+}
+
+
+
+
+
+
+
+
